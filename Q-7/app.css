@@ -1,0 +1,22 @@
+#menu {
+    background-color: #F5F5F5;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  #menu:hover {
+    background-color: #E0E0E0;
+  }
+  
+  #menu .submenu {
+    display: none;
+    list-style-type: none;
+    padding-left: 15px;
+  }
+  
+  #menu.open .submenu {
+    display: block;
+  }
+  
