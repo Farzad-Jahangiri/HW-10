@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/app.css">
+    <title>HW-10</title>
+</head>
+<body class="bg-danger fw-bold ">
+    <div class="row m-auto">
+        
+        <div class="col-lg-5  d-lg-flex align-items-lg-center mb-lg-5 order-2 order-lg-1 mt-3 mt-lg-0">
+            <div class="bg-light text-muted p-4 w-75 card mx-auto rounded-4 mb-lg-5">
+                
+                    <div class="row">
+                        <div class="col"><p class="" style="unicode-bidi: bidi-override;direction: rtl;text-align: left;"  ><span id="total">&#x06F0;</span> تومان</p></div>
+                        <div class="col"><p id="orderTotal" dir="rtl">جمع کل سفارشات:</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 col"><p class="" style="unicode-bidi: bidi-override;direction: rtl;text-align: left;"  ><span id="serviceFeeAndFee">&#x06F0;</span> تومان</p></div>
+                        <div class="col-sm-8 col"><p dir="rtl" >حق سرویس و کارمزد:</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><p class="" style="unicode-bidi: bidi-override;direction: rtl;text-align: left;"  ><span id="discount">&#x06F0;</span> تومان</p></div>
+                        <div class="col"><p class="" dir="rtl">تخفیف:</p></div>
+                    </div>
+                    <div class="">
+                        <div class="row p-0 me-1">
+                            <div class="col-2  ps-lg-4" ><input class="ms-lg-3 w-100 input-checkbox" style=" height:30px;" type="checkbox" name="checkbox" id="checkbox"></div>
+                            <div class="col-10   p-0 pb-1 ps-1"><input class="border-0 bg-white  border form-control-plaintext w-100 h-100" type="text" name="Discount" id="Discount" dir="rtl" placeholder="کد تخفیف:"></div>
+                        </div>
+                    </div>
+                    <div class="row mt-4 container mx-auto rounded-3 bg-warning">
+                        <div class="col-5 d-flex mt-1"><p class="" style="unicode-bidi: bidi-override;direction: rtl;text-align: left;"  ><span id="The_amount_payable">&#x06F0;</span> تومان</p></div>
+                        <div class="col-7 mt-1"><p class="" dir="rtl">مبلغ قابل پرداخت:</p></div>
+                    </div>
+                    <div class="h-auto mt-3">
+                        <button class="btn btn-danger w-100  " style="height: 3rem;" type="submit" id="buy-button">ثبت سفارش</button>
+                    </div>
+
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                          <span class="close" id="close_modal">&times;</span>
+                          <p class="text-center" dir="rtl">سفارش شما با موفقیت خریداری شد!</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-lg-7 mt-lg-5 container h-25rem order-1 order-lg-2">
+            <div class="card bg-light text-center h-100">
+                <div class="mt-2"><h3>رستوران مک دونالد شعبه میناب</h3></div>
+                <hr>
+                <div name="scroll"class="overflow-auto h-100">
+                    <div class="">
+                        <div class="row w-100 m-auto mt-3">
+                            <div class="col-12 col-md  m-2  h-menu">
+                                <div class="row bg-white">
+                                    <div class="col-8">
+                                        <div class="">
+                                            <h6 class="text-end">همبرگر مخصوص</h6>
+                                            <p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span class="price">&#x06F0;&#x06F0;&#x06F5;</span> تومان</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5"><p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span id="total_one">&#x06F0;</span> تومان</p></div>
+                                            <div class="col-7 d-flex align-items-center justify-content-end">
+                                                <div class="row p-0 w-75">
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-start-2 mous-pointer"><i onclick="NumbeOfOrders_Minus(this)"><img class="plus-minus m-0" src="./assets/image/5875962_action_decrease_delete_minus_negative_icon.png" alt="image"></i></div>
+                                                    <div class="col padding-0"><input class="border form-control-plaintext form-control- w-100 text-center" type="number" name="" id="item1" value="0"></div>
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-end-2 mous-pointer"><i onclick="NumbeOfOrders_Plus(this)"><img class="plus-minus m-0" src="./assets/image/211877_plus_round_icon.png" alt="image"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4"><img class="img-food" src="./assets/image/cheeseburger-hamberger-white-background-fast-food_130265-3211.avif" alt="image"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-md m-2  h-menu">
+                                <div class="row bg-white marginREs">
+                                    <div class="col-8">
+                                        <div class="">
+                                            <h6 class="text-end">همبرگر مخصوص1</h6>
+                                            <p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span class="price">&#x06F0;&#x06F0;&#x06F8;</span> تومان</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5"><p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span id="total_one">&#x06F0;</span> تومان</p></div>
+                                            <div class="col-7 d-flex align-items-center justify-content-end">
+                                                <div class="row p-0 w-75 ">
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-start-2 mous-pointer"><i onclick="NumbeOfOrders_Minus(this)"><img class="plus-minus m-0" src="./assets/image/5875962_action_decrease_delete_minus_negative_icon.png" alt="image"></i></div>
+                                                    <div class="col padding-0"><input class="border form-control-plaintext w-100 text-center" type="number" name="" id="item2" value="0"></div>
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-end-2 mous-pointer"><i onclick="NumbeOfOrders_Plus(this)"><img class="plus-minus m-0" src="./assets/image/211877_plus_round_icon.png" alt="image"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4"><img class="img-food" src="./assets/image/cheeseburger-hamberger-white-background-fast-food_130265-3211.avif" alt="image"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="">
+                        <div class="row w-100 m-auto mt-3">
+                            <div class="col-12 col-md  m-2  h-menu">
+                                <div class="row bg-white">
+                                    <div class="col-8">
+                                        <div class="">
+                                            <h6 class="text-end">همبرگر مخصوص</h6>
+                                            <p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span class="price">&#x06F0;&#x06F0;&#x06F1;</span> تومان</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5"><p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span id="total_one">&#x06F0;</span> تومان</p></div>
+                                            <div class="col-7 d-flex align-items-center justify-content-end">
+                                                <div class="row p-0 w-75">
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-start-2 mous-pointer"><i onclick="NumbeOfOrders_Minus(this)"><img class="plus-minus m-0" src="./assets/image/5875962_action_decrease_delete_minus_negative_icon.png" alt="image"></i></div>
+                                                    <div class="col padding-0"><input class="border form-control-plaintext form-control- w-100 text-center" type="number" name="" id="item1" value="0"></div>
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-end-2 mous-pointer"><i onclick="NumbeOfOrders_Plus(this)"><img class="plus-minus m-0" src="./assets/image/211877_plus_round_icon.png" alt="image"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4"><img class="img-food" src="./assets/image/cheeseburger-hamberger-white-background-fast-food_130265-3211.avif" alt="image"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-md m-2  h-menu">
+                                <div class="row bg-white marginREs">
+                                    <div class="col-8">
+                                        <div class="">
+                                            <h6 class="text-end">همبرگر مخصوص1</h6>
+                                            <p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span class="price">&#x06F0;&#x06F0;&#x06F1;</span> تومان</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5"><p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span id="total_one">&#x06F0;</span> تومان</p></div>
+                                            <div class="col-7 d-flex align-items-center justify-content-end">
+                                                <div class="row p-0 w-75 ">
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-start-2 mous-pointer"><i onclick="NumbeOfOrders_Minus(this)"><img class="plus-minus m-0" src="./assets/image/5875962_action_decrease_delete_minus_negative_icon.png" alt="image"></i></div>
+                                                    <div class="col padding-0"><input class="border form-control-plaintext w-100 text-center" type="number" name="" id="item2" value="0"></div>
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-end-2 mous-pointer"><i onclick="NumbeOfOrders_Plus(this)"><img class="plus-minus m-0" src="./assets/image/211877_plus_round_icon.png" alt="image"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4"><img class="img-food" src="./assets/image/cheeseburger-hamberger-white-background-fast-food_130265-3211.avif" alt="image"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="">
+                        <div class="row w-100 m-auto mt-3">
+                            <div class="col-12 col-md  m-2  h-menu">
+                                <div class="row bg-white">
+                                    <div class="col-8">
+                                        <div class="">
+                                            <h6 class="text-end">همبرگر مخصوص</h6>
+                                            <p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span class="price">&#x06F0;&#x06F0;&#x06F1;</span> تومان</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5"><p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span id="total_one">&#x06F0;</span> تومان</p></div>
+                                            <div class="col-7 d-flex align-items-center justify-content-end">
+                                                <div class="row p-0 w-75">
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-start-2 mous-pointer"><i onclick="NumbeOfOrders_Minus(this)"><img class="plus-minus m-0" src="./assets/image/5875962_action_decrease_delete_minus_negative_icon.png" alt="image"></i></div>
+                                                    <div class="col padding-0"><input class="border form-control-plaintext form-control- w-100 text-center" type="number" name="" id="item1" value="0"></div>
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-end-2 mous-pointer"><i onclick="NumbeOfOrders_Plus(this)"><img class="plus-minus m-0" src="./assets/image/211877_plus_round_icon.png" alt="image"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4"><img class="img-food" src="./assets/image/cheeseburger-hamberger-white-background-fast-food_130265-3211.avif" alt="image"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-md m-2  h-menu">
+                                <div class="row bg-white marginREs">
+                                    <div class="col-8">
+                                        <div class="">
+                                            <h6 class="text-end">همبرگر مخصوص1</h6>
+                                            <p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span class="price">&#x06F0;&#x06F0;&#x06F1;</span> تومان</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5"><p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span id="total_one">&#x06F0;</span> تومان</p></div>
+                                            <div class="col-7 d-flex align-items-center justify-content-end">
+                                                <div class="row p-0 w-75 ">
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-start-2 mous-pointer"><i onclick="NumbeOfOrders_Minus(this)"><img class="plus-minus m-0" src="./assets/image/5875962_action_decrease_delete_minus_negative_icon.png" alt="image"></i></div>
+                                                    <div class="col padding-0"><input class="border form-control-plaintext w-100 text-center" type="number" name="" id="item2" value="0"></div>
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-end-2 mous-pointer"><i onclick="NumbeOfOrders_Plus(this)"><img class="plus-minus m-0" src="./assets/image/211877_plus_round_icon.png" alt="image"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4"><img class="img-food" src="./assets/image/cheeseburger-hamberger-white-background-fast-food_130265-3211.avif" alt="image"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="">
+                        <div class="row w-100 m-auto mt-3">
+                            <div class="col-12 col-md  m-2  h-menu">
+                                <div class="row bg-white">
+                                    <div class="col-8">
+                                        <div class="">
+                                            <h6 class="text-end">همبرگر مخصوص</h6>
+                                            <p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span class="price">&#x06F0;&#x06F0;&#x06F1;</span> تومان</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5"><p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span id="total_one">&#x06F0;</span> تومان</p></div>
+                                            <div class="col-7 d-flex align-items-center justify-content-end">
+                                                <div class="row p-0 w-75">
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-start-2 mous-pointer"><i onclick="NumbeOfOrders_Minus(this)"><img class="plus-minus m-0" src="./assets/image/5875962_action_decrease_delete_minus_negative_icon.png" alt="image"></i></div>
+                                                    <div class="col padding-0"><input class="border form-control-plaintext form-control- w-100 text-center" type="number" name="" id="item1" value="0"></div>
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-end-2 mous-pointer"><i onclick="NumbeOfOrders_Plus(this)"><img class="plus-minus m-0" src="./assets/image/211877_plus_round_icon.png" alt="image"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4"><img class="img-food" src="./assets/image/cheeseburger-hamberger-white-background-fast-food_130265-3211.avif" alt="image"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-md m-2  h-menu">
+                                <div class="row bg-white marginREs">
+                                    <div class="col-8">
+                                        <div class="">
+                                            <h6 class="text-end">همبرگر مخصوص1</h6>
+                                            <p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span class="price">&#x06F0;&#x06F0;&#x06F1;</span> تومان</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5"><p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span id="total_one">&#x06F0;</span> تومان</p></div>
+                                            <div class="col-7 d-flex align-items-center justify-content-end">
+                                                <div class="row p-0 w-75 ">
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-start-2 mous-pointer"><i onclick="NumbeOfOrders_Minus(this)"><img class="plus-minus m-0" src="./assets/image/5875962_action_decrease_delete_minus_negative_icon.png" alt="image"></i></div>
+                                                    <div class="col padding-0"><input class="border form-control-plaintext w-100 text-center" type="number" name="" id="item2" value="0"></div>
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-end-2 mous-pointer"><i onclick="NumbeOfOrders_Plus(this)"><img class="plus-minus m-0" src="./assets/image/211877_plus_round_icon.png" alt="image"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4"><img class="img-food" src="./assets/image/cheeseburger-hamberger-white-background-fast-food_130265-3211.avif" alt="image"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="">
+                        <div class="row w-100 m-auto mt-3">
+                            <div class="col-12 col-md  m-2  h-menu">
+                                <div class="row bg-white">
+                                    <div class="col-8">
+                                        <div class="">
+                                            <h6 class="text-end">همبرگر مخصوص</h6>
+                                            <p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span class="price">&#x06F0;&#x06F0;&#x06F1;</span> تومان</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5"><p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span id="total_one">&#x06F0;</span> تومان</p></div>
+                                            <div class="col-7 d-flex align-items-center justify-content-end">
+                                                <div class="row p-0 w-75">
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-start-2 mous-pointer"><i onclick="NumbeOfOrders_Minus(this)"><img class="plus-minus m-0" src="./assets/image/5875962_action_decrease_delete_minus_negative_icon.png" alt="image"></i></div>
+                                                    <div class="col padding-0"><input class="border form-control-plaintext form-control- w-100 text-center" type="number" name="" id="item1" value="0"></div>
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-end-2 mous-pointer"><i onclick="NumbeOfOrders_Plus(this)"><img class="plus-minus m-0" src="./assets/image/211877_plus_round_icon.png" alt="image"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4"><img class="img-food" src="./assets/image/cheeseburger-hamberger-white-background-fast-food_130265-3211.avif" alt="image"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-md m-2  h-menu">
+                                <div class="row bg-white marginREs">
+                                    <div class="col-8">
+                                        <div class="">
+                                            <h6 class="text-end">همبرگر مخصوص1</h6>
+                                            <p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span class="price">&#x06F0;&#x06F0;&#x06F1;</span> تومان</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-5"><p class="text-muted" style="unicode-bidi: bidi-override;direction: rtl;text-align: right;"  ><span id="total_one">&#x06F0;</span> تومان</p></div>
+                                            <div class="col-7 d-flex align-items-center justify-content-end">
+                                                <div class="row p-0 w-75 ">
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-start-2 mous-pointer"><i onclick="NumbeOfOrders_Minus(this)"><img class="plus-minus m-0" src="./assets/image/5875962_action_decrease_delete_minus_negative_icon.png" alt="image"></i></div>
+                                                    <div class="col padding-0"><input class="border form-control-plaintext w-100 text-center" type="number" name="" id="item2" value="0"></div>
+                                                    <div class="col-2 m-0 bg-danger p-0 w-auto h-auto rounded-end-2 mous-pointer"><i onclick="NumbeOfOrders_Plus(this)"><img class="plus-minus m-0" src="./assets/image/211877_plus_round_icon.png" alt="image"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4"><img class="img-food" src="./assets/image/cheeseburger-hamberger-white-background-fast-food_130265-3211.avif" alt="image"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>             
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>

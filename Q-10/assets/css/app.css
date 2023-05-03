@@ -1,0 +1,112 @@
+.input-checkbox {
+    accent-color: #ff0000;
+  }
+  .scroll-list {
+    height: 18rem !important;
+    overflow: auto;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: #eae9e9;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #666666;
+  }
+  .img-food{
+    width: 4rem;
+    height: 4rem;
+  }
+  input[type=number] {
+    height: 1.75rem;
+    margin: 0;
+    padding: 0;
+    width: 1rem;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    /* حذف دکمه های افزایش و کاهش */
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button:before {
+    /* استایل دکمه کاهش */
+    content: "-";
+    /* display: block; */
+    /* padding-right: 3px; */
+    color: #888;
+  }
+  
+  input[type=number]::-webkit-outer-spin-button:before {
+    /* استایل دکمه افزایش */
+    content: "+";
+    /* display: block; */
+    /* position: absolute; */
+    top: 0;
+    right: 0;
+    /* padding: 0 3px; */
+    background-color: #fff;
+    color: #888;
+  }
+  .plus-minus{
+    width: 1.25rem;
+    height: 1rem;
+  }
+.padding-0{
+  padding: 0;
+}
+.mous-pointer{
+  cursor: pointer;
+}
+  
+.h-menu{
+  height: 20px;
+  width: 100%;
+}
+.h-25rem{
+  height: 30rem;
+}
+@media (max-width:768px) {
+  .marginREs{
+    margin-top: 5rem;
+  }
+}
+/* مودال */
+.modal {
+  display: none; /* پیش‌فرض پنهان است */
+  position: fixed; /* از حالت scroll خارج می‌شود */
+  z-index: 1; /* بر روی بقیه المان‌ها قرار می‌گیرد */
+  left: 0;
+  top: 0;
+  width: 100%; /* تمام صفحه عرض پیدا می‌کند */
+  height: 100%; /* تمام صفحه ارتفاع پیدا می‌کند */
+  overflow: auto; /* اگر محتویات بیشتر از اندازه مودال باشد، scroll bar ظاهر می‌شود */
+  background-color: rgba(0,0,0,0.4); /* پس‌زمینه نیمه شفاف */
+}
+
+/* محتویات مودال */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+/* بستن مودال */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
